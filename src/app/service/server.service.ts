@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, Subscriber, throwError} from 'rxjs';
+import { Observable, Subscriber, throwError, pipe} from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { CustomResponse } from '../interface/custom-response';
 import { Injectable } from '@angular/core';
@@ -11,7 +11,8 @@ export class ServerService {
 
 
 
-  private readonly apiUrl = 'any';
+  private readonly apiUrl = 'http://localhost:8080';
+
 
   constructor(private http: HttpClient) { }
 
